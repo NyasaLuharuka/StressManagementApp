@@ -47,15 +47,25 @@ struct ContentView: View {
                     .padding(.top)
             }
             
-            
-            
-            Image("cookieButton")
-                .resizable()
-                .aspectRatio(contentMode: .fit)
-                .padding(.all)
-                .frame(width: 100, height: 100)
+            ZStack {
+                
+                
+                Image("cookieButton")
+                    .resizable()
+                    .aspectRatio(contentMode: .fit)
+                    .padding(.all)
+                    .frame(width: 100, height: 100)
+                    .position(x:x, y:y)
+                    .shadow(radius: 10)
+                
+                Button("     ") {
+                    check()
+                }
+                .font(.title)
+                .fontWeight(.heavy)
                 .position(x:x, y:y)
                 .shadow(radius: 10)
+            }
 
 
         }
