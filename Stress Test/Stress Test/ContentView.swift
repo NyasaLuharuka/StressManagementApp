@@ -11,6 +11,7 @@ struct ContentView: View {
     @State var imageName = "cookies"
     @State var x = 0.0;
     @State var y = 0.0;
+    @State var score = 0
     var body: some View {
         ZStack {
             Color(#colorLiteral(red: 0.930326283, green: 0.9053675532, blue: 0.8665257096, alpha: 1))
@@ -30,8 +31,8 @@ struct ContentView: View {
                 .padding(/*@START_MENU_TOKEN@*/.bottom/*@END_MENU_TOKEN@*/, 500)
                 .foregroundColor(Color(#colorLiteral(red: 0.7172502875, green: 0.2730030119, blue: 0.3158176243, alpha: 1)))
             VStack {
-                Button("Start") {
-                    check()
+                Button("Reset") {
+                    score = 0
                 }
                 .buttonStyle(.bordered)
                 .tint(Color(#colorLiteral(red: 0.63688308, green: 0.5869231224, blue: 0.5352438688, alpha: 1)))
@@ -41,7 +42,7 @@ struct ContentView: View {
                 .padding(.top, 450)
                 .shadow(radius: 10)
                 
-                Text("Score")
+                Text("Score: " + String(score))
                     .font(.title)
                     .fontWeight(.medium)
                     .padding(.top)
@@ -81,7 +82,7 @@ struct ContentView: View {
             imageName = "cookies"
         }
          */
-        
+        score+=1
         x = Double.random(in: 10...350)
         y = Double.random(in: 10...750)
     }
